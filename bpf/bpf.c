@@ -35,14 +35,15 @@ int tc_main(struct __sk_buff *skb)
     struct tcphdr *tcp;
     struct udphdr *udp;
 
-    if (skb->protocol != bpf_htons(ETH_P_IP))
-        return TC_ACT_OK;
+    // if (skb->protocol != bpf_htons(ETH_P_IP))
+    //     return TC_ACT_OK;
 
     eth = data;
     if (data + sizeof(struct ethhdr) > data_end)
         return TC_ACT_OK;
 
-    ip = data + sizeof(struct ethhdr);
+    ip = data + 0;
+    // ip = data + sizeof(struct ethhdr);
     if ((void *)ip + sizeof(struct iphdr) > data_end)
         return TC_ACT_OK;
 

@@ -24,7 +24,7 @@ func InttoIP4(ipInt uint32) string {
 	return b0 + "." + b1 + "." + b2 + "." + b3
 }
 
-const INTERFACE = "enp1s0"
+const INTERFACE = "tun0"
 
 func main() {
 	var err error
